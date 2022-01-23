@@ -11,10 +11,9 @@ pool:
 
 steps:
 
-- task: TerraformInstaller@0
+- task: colinsalmcorner.colinsalmcorner-buildtasks.replace-tokens-task.replaceTokens@1
   inputs:
     terraformVersion: 'latest'
-    downloadUrl: '- task: colinsalmcorner.colinsalmcorner-buildtasks.replace-tokens-task.replaceTokens@1'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
