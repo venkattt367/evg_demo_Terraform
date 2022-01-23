@@ -11,8 +11,10 @@ pool:
 
 steps:
 
-- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-task
-  displayName: 'Use Terraform latest'
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: 'latest'
+    downloadUrl: '- task: colinsalmcorner.colinsalmcorner-buildtasks.replace-tokens-task.replaceTokens@1'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
