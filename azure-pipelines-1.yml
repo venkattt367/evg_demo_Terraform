@@ -10,7 +10,8 @@ pool:
   name: myagent01
 
 steps:
-- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks
+
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-task
   displayName: 'Use Terraform latest'
 - task: TerraformTaskV2@2
   inputs:
