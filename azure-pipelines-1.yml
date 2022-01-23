@@ -11,7 +11,7 @@ pool:
 
 steps:
 - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks
-  displayname: 'Use Terraform latest'
+  displayName: 'Use Terraform latest'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
