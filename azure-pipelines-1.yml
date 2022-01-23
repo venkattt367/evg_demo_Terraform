@@ -10,9 +10,8 @@ pool:
   name: myagent01
 
 steps:
-- task: TerraformInstaller@0
-  inputs:
-    terraformVersion: 'latest'
+- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks
+  displayname: 'Use Terraform latest'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
@@ -22,6 +21,11 @@ steps:
     backendAzureRmStorageAccountName: 'evgdemo'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'dev'
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Azure subscription 1 (8387394d-454a-4a31-b9cf-b43edde3669e)'
 - task: TerraformTaskV2@2
   inputs:
     provider: 'azurerm'
